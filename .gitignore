@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# GitHub Pages / static build output
+_site/
+
+# OS/editor noise
+.DS_Store
+*.log

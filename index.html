@@ -152,6 +152,9 @@
 
                 <!-- Các nút hành động bên phải (Mã API, Đăng nhập VUÔNG GÓC CẠNH) -->
                 <div class="flex items-center gap-3">
+                    <a href="17805318804541328577397787959494.jpg" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex px-4 py-1.5 text-xs text-zinc-400 hover:text-white bg-zinc-900/80 border border-zinc-800 square-flat transition-all">
+                        Tài liệu
+                    </a>
                     <button onclick="toggleApiSettingsModal()" class="px-4 py-1.5 text-xs text-zinc-400 hover:text-white bg-zinc-900/80 border border-zinc-800 square-flat transition-all">
                         Mã API
                     </button>
@@ -276,6 +279,35 @@
                         <p class="text-[10px] text-zinc-500 line-clamp-2">Hỗ trợ bởi AI thế hệ mới</p>
                     </div>
                 </div>
+
+                <!-- TÀI LIỆU DỰ ÁN RKIX3: FILE JPG ĐƯỢC DEPLOY CÙNG GITHUB PAGES -->
+                <section id="projectDocument" class="w-full max-w-4xl mx-auto mt-6 bg-rkixSidebar/40 border border-blue-950/60 square-flat overflow-hidden shadow-2xl">
+                    <div class="flex flex-col lg:flex-row">
+                        <a href="17805318804541328577397787959494.jpg" target="_blank" rel="noopener noreferrer" class="block lg:w-1/3 bg-zinc-950/80 border-b lg:border-b-0 lg:border-r border-zinc-900 max-h-72 overflow-hidden">
+                            <img src="17805318804541328577397787959494.jpg" alt="Tài liệu dự án RKIX3" class="w-full h-auto object-top object-cover opacity-90 hover:opacity-100 transition-opacity">
+                        </a>
+                        <div class="p-5 lg:p-6 flex-1 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="w-2 h-2 bg-rkixLightBlue square-flat shadow-[0_0_12px_rgba(0,210,255,0.75)]"></span>
+                                <span class="text-[9px] font-bold uppercase tracking-[0.28em] text-rkixLightBlue">RKIX3 Project Document</span>
+                            </div>
+                            <h4 class="text-base md:text-lg font-extrabold text-white mb-2">Tài liệu dự án RKIX3</h4>
+                            <p class="text-xs md:text-sm text-zinc-400 leading-relaxed mb-4">
+                                File <code class="text-rkixLightBlue">17805318804541328577397787959494.jpg</code> đã được kiểm tra, liên kết trong giao diện và copy vào artifact GitHub Pages để người dùng mở trực tiếp sau khi deploy.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="17805318804541328577397787959494.jpg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-blue-700 hover:bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider square-flat transition-all">
+                                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                                    Mở tài liệu
+                                </a>
+                                <button onclick="loadPromptSample('Tài liệu dự án')" class="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 text-[10px] font-bold uppercase tracking-wider square-flat transition-all">
+                                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                                    Tạo prompt từ tài liệu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
             </div>
 
@@ -456,6 +488,9 @@
                     break;
                 case 'AI thông minh':
                     value = "Tư vấn thiết lập bảo mật cấp cao nhất cho các dự án tích hợp API Gemini.";
+                    break;
+                case 'Tài liệu dự án':
+                    value = "Dựa trên tài liệu dự án RKIX3 trong file 17805318804541328577397787959494.jpg, hãy tóm tắt cấu trúc, rủi ro triển khai và checklist GitHub Pages cần kiểm tra.";
                     break;
                 default:
                     value = `Thực thi tác vụ liên quan đến: ${category}`;
