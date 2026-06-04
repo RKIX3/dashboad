@@ -18,6 +18,8 @@
     ·
     <a href="#-tính-năng-nổi-bật">Tính năng</a>
     ·
+    <a href="#-tài-liệu-dự-án">Tài liệu dự án</a>
+    ·
     <a href="#-vinh-danh-người-tạo-ra-rkix3">Vinh danh</a>
     ·
     <a href="#-nhà-tài-trợ--đồng-hành-đặc-biệt">Nhà tài trợ</a>
@@ -50,6 +52,7 @@
 | 🖼️ HTML Preview | Xem trước HTML sinh ra trong iframe sandbox an toàn hơn. |
 | 📱 Mobile ready | UI tối ưu cho điện thoại, Termux workflow và thao tác nhanh. |
 | 🚀 GitHub Pages | Workflow deploy static content qua artifact `_site` và GitHub Pages Actions. |
+| 📄 Tài liệu dự án | File `17805318804541328577397787959494.jpg` được đưa vào README, web app và artifact deploy. |
 
 ## 🏗️ Kiến trúc nhanh
 
@@ -58,6 +61,8 @@ RKIX3/
 ├─ index.html                       # Single-file AI Studio UI
 ├─ README.md                        # Trang giới thiệu chuyên nghiệp trên GitHub
 ├─ 1780136894650-Photoroom.png      # Logo chính
+├─ 17805318804541328577397787959494.jpg # Tài liệu dự án RKIX3
+├─ .github/workflows/proof-html.yml # Kiểm tra HTML sau khi checkout source
 └─ .github/workflows/static.yml     # Build _site + deploy GitHub Pages
 ```
 
@@ -68,14 +73,32 @@ python3 -m http.server 4173
 # mở http://127.0.0.1:4173
 ```
 
+## 📄 Tài liệu dự án
+
+File tài liệu dự án RKIX3 đã được gắn trực tiếp vào repository với tên:
+
+```txt
+17805318804541328577397787959494.jpg
+```
+
+- Xem nhanh trên GitHub: [`17805318804541328577397787959494.jpg`](./17805318804541328577397787959494.jpg).
+- Khi deploy GitHub Pages, workflow static copy file này vào `_site` để truy cập cùng cấp với `index.html`.
+- Web app cũng có thẻ “Tài liệu dự án RKIX3” trỏ về đúng file này để người dùng mở tài liệu ngay từ giao diện.
+
+<div align="center">
+  <a href="./17805318804541328577397787959494.jpg">
+    <img src="17805318804541328577397787959494.jpg" width="360" alt="Tài liệu dự án RKIX3">
+  </a>
+</div>
+
 ## 🚀 Deploy GitHub Pages
 
 Workflow `.github/workflows/static.yml` sẽ:
 
 1. Checkout source.
 2. Setup GitHub Pages.
-3. Tạo `_site` chứa `index.html`, ảnh và file đánh dấu static site.
-4. Upload artifact Pages.
+3. Tạo `_site` sạch và copy `index.html`, `README.md`, logo, file tài liệu `17805318804541328577397787959494.jpg`, kèm `.nojekyll`.
+4. Upload artifact Pages từ `_site`.
 5. Deploy bằng `actions/deploy-pages`.
 
 > Nếu GitHub vẫn báo lỗi deploy, hãy vào **Settings → Pages → Build and deployment** và chọn **Source: GitHub Actions** cho repository.
@@ -121,10 +144,11 @@ Workflow `.github/workflows/static.yml` sẽ:
 </table>
 
 
-## ✅ Ba xung đột đã được chốt
+## ✅ Bốn xung đột đã được chốt
 
-- **Workflow Pages**: chỉ giữ một pipeline static ở `.github/workflows/static.yml`, dùng `_site` làm artifact triển khai.
-- **Tài liệu GitHub**: README là trang giới thiệu chính thức của RKIX3, không còn nội dung cũ trùng lặp.
+- **Workflow Pages**: chỉ giữ một pipeline deploy static ở `.github/workflows/static.yml`, dùng `_site` làm artifact triển khai.
+- **Proof HTML**: workflow kiểm tra HTML có bước checkout source trước khi chạy proof.
+- **Tài liệu dự án**: file `17805318804541328577397787959494.jpg` được liên kết trong README, hiển thị trong web app và copy vào artifact Pages.
 - **Web app RKIX3**: `index.html` tiếp tục là nguồn giao diện single-file được workflow copy trực tiếp khi deploy.
 
 ## 🗺️ Roadmap
@@ -133,6 +157,7 @@ Workflow `.github/workflows/static.yml` sẽ:
 - [x] Command Center cho CLI/mobile workflow.
 - [x] Demo Offline để sinh blueprint khi chưa có API key.
 - [x] GitHub Pages static deploy workflow.
+- [x] Tài liệu dự án RKIX3 được public cùng web app.
 - [ ] Backend proxy bảo vệ API key production.
 - [ ] Lưu lịch sử prompt/snippet theo workspace.
 - [ ] CLI `mycli` thật cho Termux: auth/init/ai/db/deploy.
